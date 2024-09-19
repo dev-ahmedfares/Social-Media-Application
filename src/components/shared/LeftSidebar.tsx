@@ -1,5 +1,5 @@
 import { sidebarLinks } from "@/constants";
-import { useAuthContext } from "@/context/AuthContext";
+import { INITIAL_USER, useAuthContext } from "@/context/AuthContext";
 import { INavLink } from "@/types";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "../ui/button";
@@ -7,14 +7,18 @@ import { useSignOutAccount } from "@/lib/react-query/queries";
 import { useEffect } from "react";
 
 export default function LeftSidebar() {
-  const { user } = useAuthContext();
+  const { user,setUser,setIsAuthenticated } = useAuthContext();
   const { pathname } = useLocation();
-  const { signOut, isSuccess } = useSignOutAccount();
+  const { signOut } = useSignOutAccount();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (isSuccess) navigate(0);
-  }, [isSuccess]);
+  function handleSignOut(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    e.preventDefault();
+    signOut();
+    setIsAuthenticated(false);
+    setUser(INITIAL_USER);
+    navigate("/sign-in");
+  }
 
   return (
     <nav className="leftsidebar">
@@ -64,7 +68,7 @@ export default function LeftSidebar() {
       <Button
         variant={"ghost"}
         className="shad-button_ghost"
-        onClick={() => signOut()}>
+        onClick={handleSignOut}>
         <img src="/assets/icons/logout.svg" alt="logout" />
       <p className="small-medium">Logout</p>
       </Button>
