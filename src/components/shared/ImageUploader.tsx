@@ -36,7 +36,7 @@ export default function ImageUploader({
         <img
           src={fileUrl || "/assets/icons/profile-placeholder.svg"}
           alt="profile"
-          className="h-28 w-28 cursor-pointer rounded-full object-cover lg:h-36 lg:w-36"
+          className="h-28 w-28 cursor-pointer rounded-full object-top object-cover lg:h-36 lg:w-36"
         />
         <p className="small-regular cursor-pointer text-light-3">
           Change profile photo

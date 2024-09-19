@@ -86,7 +86,7 @@ export default function PostDetails() {
                     "/assets/icons/profile-placeholder.svg"
                   }
                   alt="user image"
-                  className="h-8 w-8 rounded-full object-top md:h-12 md:w-12"
+                  className="h-8 w-8 rounded-full object-top md:h-12 md:w-12 object-cover"
                 />
               </Link>
               <div className="flex flex-col gap-1">

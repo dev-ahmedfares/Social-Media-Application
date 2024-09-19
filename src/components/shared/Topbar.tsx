@@ -35,7 +35,7 @@ export default function Topbar() {
           <img
             src={user.imageUrl || "/assets/icons/profile-placeholder.svg"}
             alt="profile image"
-            className="h-8 w-8 rounded-full object-cover"
+            className="h-8 w-8 rounded-full object-cover object-top"
           />
         </Link>
       </div>

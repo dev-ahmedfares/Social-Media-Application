@@ -58,7 +58,7 @@ export default function Profile() {
               currentUser.imageUrl || "/assets/icons/profile-placeholder.svg"
             }
             alt="profile"
-            className="h-28 w-28 rounded-full lg:h-36 lg:w-36  object-cover"
+            className="h-28 w-28 rounded-full lg:h-36 lg:w-36 object-top object-cover"
           />
           </div>
           <div className="flex flex-1 flex-col justify-between md:mt-2">

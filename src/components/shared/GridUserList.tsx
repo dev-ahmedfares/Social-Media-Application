@@ -17,7 +17,7 @@ export default function GridUserList({ users,inHome }: GridUserListProps) {
             <img
               src={user.imageUrl}
               alt="image"
-              className="h-14 w-14 object-cover rounded-full"
+              className="h-14 w-14 object-cover rounded-full object-top"
             />
             <div className="text-center">
             <p className="body-bold ">{user.name}</p>

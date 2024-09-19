@@ -21,7 +21,7 @@ export default function PostCard({ post }: PostCardProps) {
                 "/assets/icons/profile-placeholder.svg"
               }
               alt="user image"
-              className="h-12 w-12 rounded-full object-cover"
+              className="h-12 w-12 rounded-full object-cover object-top"
             />
           </Link>
           <div className="flex flex-col gap-1">
@@ -59,7 +59,7 @@ export default function PostCard({ post }: PostCardProps) {
         <img
           src={post.imageUrl || "/assets/icons/profile-placeholder.svg"}
           alt="post image"
-          className="post-card_img object-cover"
+          className="post-card_img object-cover "
       
         />
       </Link>
