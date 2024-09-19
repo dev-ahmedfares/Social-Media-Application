@@ -36,7 +36,7 @@ export default function PostCard({ post }: PostCardProps) {
         {user.id === post.creator.$id && (
           <Link to={`/update-post/${post.$id}`}>
             <img
-              src="/public/assets/icons/edit.svg"
+              src="/assets/icons/edit.svg"
               alt="Edit post"
               width={20}
               height={20}

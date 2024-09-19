@@ -21,7 +21,7 @@ export default function LeftSidebar() {
       <div className="flex flex-col gap-11">
         <Link to="/">
           <img
-            src="/public/assets/images/logo.svg"
+            src="/assets/images/logo.svg"
             alt="logo"
             width={170}
             height={36}
@@ -65,7 +65,7 @@ export default function LeftSidebar() {
         variant={"ghost"}
         className="shad-button_ghost"
         onClick={() => signOut()}>
-        <img src="/public/assets/icons/logout.svg" alt="logout" />
+        <img src="/assets/icons/logout.svg" alt="logout" />
       <p className="small-medium">Logout</p>
       </Button>
       

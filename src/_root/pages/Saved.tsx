@@ -18,7 +18,7 @@ export default function Saved() {
     <div className="saved-container max-md:my-16">
       <h2 className="h3-bold lg:h2-bold  flex w-full max-w-5xl items-center gap-3">
         <img
-          src="/public/assets/icons/save.svg"
+          src="/assets/icons/save.svg"
           alt="save icon"
           className="invert-white h-7 w-7 lg:h-8 lg:w-8"
         />
@@ -32,7 +32,7 @@ export default function Saved() {
         <>
           {savedPosts.length === 0 ? (
             <div className="flex  flex-center h-full flex-col">
-              <img src="/public/assets/icons/Empty-pana.svg" alt="no posts" className="lg:w-80 md:w-60" />
+              <img src="/assets/icons/Empty-pana.svg" alt="no posts" className="lg:w-80 md:w-60" />
               <p className="h3-bold lg:h2-bold">No available posts</p>
             </div>
           ) : (

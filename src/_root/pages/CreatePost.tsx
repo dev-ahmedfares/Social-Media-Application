@@ -6,7 +6,7 @@ export default function CreatePost() {
       <div className="common-container">
         <div className="flex w-full max-w-5xl items-center justify-start gap-3">
           <img
-            src="/public/assets/icons/add-post.svg"
+            src="/assets/icons/add-post.svg"
             alt="add-post icon"
             width={36}
             height={36}

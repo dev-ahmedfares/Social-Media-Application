@@ -17,7 +17,7 @@ export default function Topbar() {
     <div className="topbar flex-between px-5 py-4">
       <Link to="/">
         <img
-          src="/public/assets/images/logo.svg"
+          src="/assets/images/logo.svg"
           alt="logo"
           width={130}
           height={325}
@@ -29,7 +29,7 @@ export default function Topbar() {
           variant={"ghost"}
           className="shad-button_ghost"
           onClick={() => signOut()}>
-          <img src="/public/assets/icons/logout.svg" alt="logout" />
+          <img src="/assets/icons/logout.svg" alt="logout" />
         </Button>
         <Link to={`/profile/${user.id}`}>
           <img

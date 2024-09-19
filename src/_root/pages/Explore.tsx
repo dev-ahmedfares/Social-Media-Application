@@ -45,7 +45,7 @@ export default function Explore() {
         </h2>
         <div className="flex w-full max-w-5xl items-center rounded-md bg-dark-4 px-5 focus-within:ring-1 focus-within:ring-primary-600/70">
           <img
-            src="/public/assets/icons/search.svg"
+            src="/assets/icons/search.svg"
             alt="search"
             className="h-6 w-6"
           />
@@ -62,7 +62,7 @@ export default function Explore() {
           <div className="flex cursor-pointer items-center gap-3 rounded-md bg-dark-3 px-3 py-2">
             <p>All</p>
             <img
-              src="/public/assets/icons/filter.svg"
+              src="/assets/icons/filter.svg"
               alt="filter icon"
               width={20}
               height={20}

@@ -61,7 +61,7 @@ export default function PostDetails() {
           variant={"ghost"}
           className="flex items-center gap-2 hover:bg-transparent hover:text-light-1">
           <img
-            src="/public/assets/icons/back.svg"
+            src="/assets/icons/back.svg"
             alt="back"
             className="h-6 w-6"
           />
@@ -103,7 +103,7 @@ export default function PostDetails() {
               {user.id === post.creator.$id && (
                 <Link to={`/update-post/${post.$id}`}>
                   <img
-                    src="/public/assets/icons/edit.svg"
+                    src="/assets/icons/edit.svg"
                     alt="Edit post"
                     className="h-6 w-6 md:h-7 md:w-7"
                   />
@@ -116,7 +116,7 @@ export default function PostDetails() {
                 variant={"ghost"}
                 className="p-0 hover:bg-transparent">
                 <img
-                  src="/public/assets/icons/delete.svg"
+                  src="/assets/icons/delete.svg"
                   alt="delete"
                   className="h-6 w-6 md:h-7 md:w-7"
                 />

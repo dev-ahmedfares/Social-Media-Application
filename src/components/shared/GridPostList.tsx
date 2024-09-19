@@ -35,7 +35,7 @@ export default function GridPostList({
                 <img
                   src={
                     post.creator.imageUrl ||
-                    "/public/assets/icons/profile-placeholder.svg"
+                    "/assets/icons/profile-placeholder.svg"
                   }
                   alt="image Profile"
                   className="h-8 w-8 rounded-full"

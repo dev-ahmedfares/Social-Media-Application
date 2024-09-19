@@ -70,8 +70,8 @@ export default function PostStats({ post, userId,fullWidth = false }: PostStatsP
         <img
           src={
             checkIsLiked(likes, userId)
-              ? `/public/assets/icons/liked.svg`
-              : `/public/assets/icons/like.svg`
+              ? `/assets/icons/liked.svg`
+              : `/assets/icons/like.svg`
           }
           width={20}
           height={20}
@@ -90,8 +90,8 @@ export default function PostStats({ post, userId,fullWidth = false }: PostStatsP
           <img
             src={
               isSaved
-                ? `/public/assets/icons/saved.svg`
-                : `/public/assets/icons/save.svg`
+                ? `/assets/icons/saved.svg`
+                : `/assets/icons/save.svg`
             }
             width={20}
             height={20}

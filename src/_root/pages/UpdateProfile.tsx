@@ -10,7 +10,7 @@ export default function UpdateProfile() {
     <div className="saved-container max-md:my-16">
       <h2 className="h3-bold lg:h2-bold flex w-full max-w-5xl items-center gap-3">
         <img
-          src="/public/assets/icons/edit.svg"
+          src="/assets/icons/edit.svg"
           alt="save icon"
           className="invert-white h-7 w-7 lg:h-8 lg:w-8"
         />
