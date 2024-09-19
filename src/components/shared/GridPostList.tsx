@@ -38,7 +38,7 @@ export default function GridPostList({
                     "/assets/icons/profile-placeholder.svg"
                   }
                   alt="image Profile"
-                  className="h-8 w-8 rounded-full"
+                  className="h-8 w-8 rounded-full object-cover object-top"
                 />
                 <p className="line-clamp-1">{post.creator.name}</p>
               </div>

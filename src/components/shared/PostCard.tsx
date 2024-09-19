@@ -60,7 +60,6 @@ export default function PostCard({ post }: PostCardProps) {
           src={post.imageUrl || "/assets/icons/profile-placeholder.svg"}
           alt="post image"
           className="post-card_img object-cover "
-      
         />
       </Link>
 
