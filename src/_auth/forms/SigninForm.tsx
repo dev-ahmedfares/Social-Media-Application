@@ -104,7 +104,7 @@ const SigninForm = () => {
             disabled={isUserLoading || isSignIn}
             type="submit"
             className="shad-button_primary">
-            {isUserLoading || isSignIn ? <Loader /> : "Sign Up"}
+            {isUserLoading || isSignIn ? <Loader /> : "Log in"}
           </Button>
           <p className="small-regular mt-3 text-center text-light-2">
           Don&apos;t have an account?{" "}
