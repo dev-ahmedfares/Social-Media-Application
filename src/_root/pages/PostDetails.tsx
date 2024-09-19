@@ -60,11 +60,7 @@ export default function PostDetails() {
           onClick={() => navigate(-1)}
           variant={"ghost"}
           className="flex items-center gap-2 hover:bg-transparent hover:text-light-1">
-          <img
-            src="/assets/icons/back.svg"
-            alt="back"
-            className="h-6 w-6"
-          />
+          <img src="/assets/icons/back.svg" alt="back" className="h-6 w-6" />
           <p className="small-medium lg:base-medium">Back</p>
         </Button>
       </div>
@@ -86,7 +82,7 @@ export default function PostDetails() {
                     "/assets/icons/profile-placeholder.svg"
                   }
                   alt="user image"
-                  className="h-8 w-8 rounded-full object-top md:h-12 md:w-12 object-cover"
+                  className="h-8 w-8 rounded-full object-cover object-top md:h-12 md:w-12"
                 />
               </Link>
               <div className="flex flex-col gap-1">
@@ -101,26 +97,28 @@ export default function PostDetails() {
             </div>
             <div className="flex items-center gap-5">
               {user.id === post.creator.$id && (
-                <Link to={`/update-post/${post.$id}`}>
-                  <img
-                    src="/assets/icons/edit.svg"
-                    alt="Edit post"
-                    className="h-6 w-6 md:h-7 md:w-7"
-                  />
-                </Link>
+                <>
+                  <Link to={`/update-post/${post.$id}`}>
+                    <img
+                      src="/assets/icons/edit.svg"
+                      alt="Edit post"
+                      className="h-6 w-6 md:h-7 md:w-7"
+                    />
+                  </Link>
+                  <Button
+                    disabled={isDeletingPost}
+                    onClick={handleDeletePost}
+                    type="button"
+                    variant={"ghost"}
+                    className="p-0 hover:bg-transparent">
+                    <img
+                      src="/assets/icons/delete.svg"
+                      alt="delete"
+                      className="h-6 w-6 md:h-7 md:w-7"
+                    />
+                  </Button>{" "}
+                </>
               )}
-              <Button
-                disabled={isDeletingPost}
-                onClick={handleDeletePost}
-                type="button"
-                variant={"ghost"}
-                className="p-0 hover:bg-transparent">
-                <img
-                  src="/assets/icons/delete.svg"
-                  alt="delete"
-                  className="h-6 w-6 md:h-7 md:w-7"
-                />
-              </Button>
             </div>
           </div>
 
