@@ -1,7 +1,6 @@
 import { INewPost, INewUser, IUpdatedPost, IUpdateProfile } from "./../../types/index";
 import {
   useInfiniteQuery,
-  UseInfiniteQueryOptions,
   useMutation,
   useQuery,
   useQueryClient,
@@ -27,7 +26,7 @@ import {
   updateUserProfile,
 } from "../appwrite/api";
 import { QUERY_KEYS } from "./queryKeys";
-import { Models } from "appwrite";
+
 
 export function useCreateUserAccount() {
   const { mutateAsync: createUserAccount, isPending: isCreatingAccount } =
@@ -260,10 +259,10 @@ export function useGetInfinitePosts() {
   return { infinitePosts,error,isFetching,fetchNextPage, isGettingIPosts, hasNextPage, isFetchingNextPage };
 }
 
-export function useGetUsers(limit?:number) {
+export function useGetUsers() {
   const {data:allUsers,isLoading,isError:isErrorCreators}= useQuery({
     queryKey:[QUERY_KEYS.GET_USERS],
-    queryFn:()=> getAllUsers(limit)
+    queryFn:()=> getAllUsers()
   })
 
   return {allUsers,isLoading,isErrorCreators}

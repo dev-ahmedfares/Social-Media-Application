@@ -418,7 +418,7 @@ export async function getInfinityPosts({ pageParam }: { pageParam: number }) {
 }
 
 // ============================== GET ALL USERS
-export async function getAllUsers(limit?: number) {
+export async function getAllUsers() {
   try {
     const allUser = await databases.listDocuments(
       appwriteConfig.databaseId,

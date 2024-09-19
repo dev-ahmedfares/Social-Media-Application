@@ -1,7 +1,7 @@
 import { convertFileToUrl } from "@/lib/utils";
 import { useCallback, useState } from "react";
 import { FileWithPath, useDropzone } from "react-dropzone";
-import { Link } from "react-router-dom";
+
 
 type ImageUploaderProps = {
   fieldChanged: (file: File[]) => void;

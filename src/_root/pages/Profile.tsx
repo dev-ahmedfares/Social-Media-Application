@@ -7,7 +7,6 @@ import { useGetUserById } from "@/lib/react-query/queries";
 import { Models } from "appwrite";
 import {
   Link,
-  Outlet,
   Route,
   Routes,
   useLocation,

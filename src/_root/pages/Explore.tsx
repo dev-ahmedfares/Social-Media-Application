@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 export default function Explore() {
-  const { ref, inView, entry } = useInView();
+  const { ref, inView } = useInView();
   const [searchValue, setSearch] = useState("");
   const debouncedValue = useDebounce(searchValue, 500);
   const { searchedPosts, isGettingSearchedPosts } =
@@ -16,7 +16,6 @@ export default function Explore() {
 
   const {
     infinitePosts,
-    isGettingIPosts,
     fetchNextPage,
     hasNextPage,
   } = useGetInfinitePosts();
@@ -78,7 +77,7 @@ export default function Explore() {
           <>
             {shouldShowSearchResults
               ? <SearchResults searchedPosts={searchedPosts} isGettingSearchedPosts={isGettingSearchedPosts}  />
-              : infinitePosts.pages.map((item, index) => (
+              : infinitePosts.pages.map((item, index) => (item &&
                   <GridPostList
                     key={`page-${index}`}
                     posts={item.documents}
