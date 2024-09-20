@@ -17,7 +17,7 @@ export default function AllUsers() {
   }
 
   return (
-    <div className="saved-container max-lg:px-10 max-md:my-16">
+    <div className="saved-container max-lg:px-10 max-md:pt-24">
       <h2 className="h3-bold md:h2-bold flex w-full max-w-5xl items-center gap-3">
         All Users
       </h2>

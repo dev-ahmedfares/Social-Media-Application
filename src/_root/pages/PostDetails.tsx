@@ -54,7 +54,7 @@ export default function PostDetails() {
   }
 
   return (
-    <div className="post_details-container max-md:mt-20 max-sm:my-16">
+    <div className="post_details-container max-md:mt-20 max-md:pt-24">
       <div className="hidden w-full max-w-5xl md:flex">
         <Button
           onClick={() => navigate(-1)}

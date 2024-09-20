@@ -37,7 +37,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-1">
-      <div className="home-container max-md:my-16">
+      <div className="home-container max-md:pt-24">
         <div className="home-posts relative">
           <h2 className="h3-bold md:h2-bold w-full text-start text-light-1">
             Home Feed

@@ -49,7 +49,7 @@ export default function Profile() {
   }));
 
   return (
-    <div className="profile-container max-md:my-16">
+    <div className="profile-container max-md:pt-24">
       <div className="profile-inner_container">
         <div className="flex flex-1 flex-col gap-7 max-xl:items-center xl:flex-row">
           <div className="flex-center">

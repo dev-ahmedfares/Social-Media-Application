@@ -7,7 +7,7 @@ export default function UpdateProfile() {
   const { id } = useParams();
   const { userData, isLoading } = useGetUserById(id || "");
   return (
-    <div className="saved-container max-md:my-16">
+    <div className="saved-container max-md:pt-24">
       <h2 className="h3-bold lg:h2-bold flex w-full max-w-5xl items-center gap-3">
         <img
           src="/assets/icons/edit.svg"

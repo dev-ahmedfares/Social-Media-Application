@@ -8,7 +8,7 @@ export default function EditPost() {
   const { currentPost, isGettingCurrentPost } = useGetPostById(id);
   
   return (
-    <div className="flex flex-1 max-md:my-16">
+    <div className="flex flex-1 max-md:pt-24">
       <div className="common-container">
         <div className="flex w-full max-w-5xl items-center justify-start gap-3">
           <img
