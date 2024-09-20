@@ -11,7 +11,7 @@ import PageNotFound from "./_root/pages/PageNotFound";
 
 function App() {
   return (
-    <main className="flex supports-[height:100dvh]:h-dvh h-screen ">
+    <main className="flex supports-[height:100dvh]:h-dvh h-screen">
       <Routes>
         {/* Public routes */}
         <Route element={<AuthLayout />}>
