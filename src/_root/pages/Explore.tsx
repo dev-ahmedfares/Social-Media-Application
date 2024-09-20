@@ -38,7 +38,7 @@ export default function Explore() {
 
 
   return (
-    <div className="explore-container max-md:pt-24">
+    <div className="explore-container ">
       <div className="explore-inner_container">
         <h2 className="h3-bold lg:h2-bold w-full max-w-5xl gap-3">
           Search Posts

@@ -15,7 +15,7 @@ export default function Saved() {
   })).reverse();
 
   return (
-    <div className="saved-container max-md:pt-24">
+    <div className="saved-container ">
       <h2 className="h3-bold lg:h2-bold  flex w-full max-w-5xl items-center gap-3">
         <img
           src="/assets/icons/save.svg"
