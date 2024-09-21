@@ -5,7 +5,7 @@ import AuthLayout from "./_auth/AuthLayout";
 import RootLayout from "./_root/RootLayout";
 import { AllUsers, CreatePost, EditPost, Explore, Home, PostDetails, Profile, Saved, UpdateProfile } from "./_root/pages";
 import "./global.css";
-import { Toaster } from "./components/ui/toaster";
+import  { Toaster } from 'react-hot-toast';
 import PageNotFound from "./_root/pages/PageNotFound";
 
 
@@ -32,7 +32,7 @@ function App() {
           <Route path="*" element={<PageNotFound/>}/>
         </Route>
       </Routes>
-      <Toaster />
+      <Toaster  position="bottom-right"/>
     </main>
   );
 }

@@ -19,8 +19,9 @@ import { Models } from "appwrite";
 import { useCreatePost, useUpdatePost } from "@/lib/react-query/queries";
 import { useAuthContext } from "@/context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { toast } from "@/hooks/use-toast";
+
 import Loader from "../shared/Loader";
+import toast from "react-hot-toast";
 
 type PostFormProps = {
   post?: Models.Document;
@@ -55,9 +56,7 @@ export default function PostForm({ post, action }: PostFormProps) {
       });
 
       if (!newUpdatedPost) {
-        toast({
-          title: `${action} post failed. Please try again.`,
-        });
+        toast(`${action} post failed. Please try again.`);
       }
 
       return navigate(`/posts/${post.$id}`);
@@ -69,9 +68,7 @@ export default function PostForm({ post, action }: PostFormProps) {
     });
 
     if (!newPost) {
-      toast({
-        title: `${action} post failed. Please try again.`,
-      });
+      toast(`${action} post failed. Please try again.`);
     }
 
     navigate("/");

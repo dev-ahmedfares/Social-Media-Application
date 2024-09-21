@@ -9,7 +9,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useToast } from "@/hooks/use-toast";
+
 import { useNavigate } from "react-router-dom";
 import {  useSignInAccount } from "@/lib/react-query/queries";
 import { SigninValidation } from "@/lib/validation";
@@ -18,9 +18,10 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { z } from "zod";
 import { useAuthContext } from "@/context/AuthContext";
+import toast from "react-hot-toast";
 
 const SigninForm = () => {
-  const { toast } = useToast();
+
   const navigate = useNavigate()
   const {checkAuthUser, isLoading:isUserLoading}= useAuthContext()
   
@@ -40,16 +41,17 @@ const SigninForm = () => {
     const session = await signInAccount(user)
 
     if (!session) {
-      toast({title:"Login failed. Please try again."})
+      toast.error("Login failed. Please try again.",{position:"top-center"})
       return;
     }
+    console.log(session)
     const isLoggedIn = await checkAuthUser()
 
     if (isLoggedIn) {
       form.reset()
       navigate("/")
     } else {
-      toast({title:"Login failed. Please try again."})
+      toast.error("Your email or password is incorrect.",{position:"top-center"})
       return
     }
     

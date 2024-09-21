@@ -1,18 +1,19 @@
 import GridUserList from "@/components/shared/GridUserList";
 import Loader from "@/components/shared/Loader";
-import { useToast } from "@/hooks/use-toast";
+
 
 import { useGetUsers } from "@/lib/react-query/queries";
+import toast from "react-hot-toast";
 
 
 
 export default function AllUsers() {
 
-  const { toast } = useToast();
+
   const { allUsers, isLoading, isErrorCreators } = useGetUsers();
 
   if (isErrorCreators) {
-    toast({ title: "Something went wrong." });
+    toast("Something went wrong.");
     return;
   }
 

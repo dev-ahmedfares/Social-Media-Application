@@ -21,18 +21,19 @@ import { Textarea } from "@/components/ui/textarea";
 import { Models } from "appwrite";
 import { ProfileValidation } from "@/lib/validation";
 import { useUpdateUserProfile } from "@/lib/react-query/queries";
-import { useToast } from "@/hooks/use-toast";
+
 import { useAuthContext } from "@/context/AuthContext";
+import toast from "react-hot-toast";
 
 export default function FormProfile({
   userData,
 }: {
   userData: Models.Document;
 }) {
-    const {user,setUser}= useAuthContext()
+  const { user, setUser } = useAuthContext();
   const navigate = useNavigate();
   const { updateUser, isUpdatingProfile } = useUpdateUserProfile();
-  const { toast } = useToast();
+
   const form = useForm<z.infer<typeof ProfileValidation>>({
     resolver: zodResolver(ProfileValidation),
     defaultValues: {
@@ -53,17 +54,15 @@ export default function FormProfile({
     });
 
     if (!updatedUser) {
-      return toast({
-        title: `Update user failed. Please try again.`,
-      });
+      return toast(`Update user failed. Please try again.`);
     }
 
     setUser({
-        ...user,
-        name: updatedUser?.name,
+      ...user,
+      name: updatedUser?.name,
       bio: updatedUser?.bio,
       imageUrl: updatedUser?.imageUrl,
-    })
+    });
 
     return navigate(`/profile/${userData.$id}`);
   }

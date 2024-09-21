@@ -1,10 +1,11 @@
 import GridUserList from "@/components/shared/GridUserList";
 import Loader from "@/components/shared/Loader";
 import PostCard from "@/components/shared/PostCard";
-import { useToast } from "@/hooks/use-toast";
+
 import { useGetInfinitePosts, useGetUsers } from "@/lib/react-query/queries";
 import { Models } from "appwrite";
 import { useEffect } from "react";
+import toast from "react-hot-toast";
 import { useInView } from "react-intersection-observer";
 
 
@@ -26,11 +27,10 @@ export default function Home() {
   }, [inView, isFetching]);
 
 
-  const { toast } = useToast();
   const { allUsers, isLoading, isErrorCreators } = useGetUsers();
 
   if (isErrorCreators) {
-    toast({ title: "Something went wrong." });
+    toast( "Something went wrong.");
 
     return;
   }

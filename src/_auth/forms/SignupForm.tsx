@@ -9,7 +9,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 import { useCreateUserAccount, useSignInAccount } from "@/lib/react-query/queries";
 import { SignupValidation } from "@/lib/validation";
@@ -18,9 +17,10 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { z } from "zod";
 import { useAuthContext } from "@/context/AuthContext";
+import toast from "react-hot-toast";
 
 const SignupForm = () => {
-  const { toast } = useToast();
+
   const navigate = useNavigate()
   const {checkAuthUser}= useAuthContext()
   
@@ -43,12 +43,12 @@ const SignupForm = () => {
   async function onSubmit(user: z.infer<typeof SignupValidation>) {
     try {
       const newUser = await createUserAccount(user);
-    if (!newUser) return toast({title:"Sign up failed. Please try again."});
+    if (!newUser) return toast("Sign up failed. Please try again.");
 
     const session = await signInAccount({email:user.email,password:user.password})
 
     if (!session){
-      toast({title:"Something went wrong. Please login your new account"})
+      toast("Something went wrong. Please login your new account")
       navigate("/sign-in")
       return;
     }
@@ -58,7 +58,7 @@ const SignupForm = () => {
       form.reset()
       navigate("/")
     } else {
-      toast({title:"Login failed. Please try again."})
+      toast("Login failed. Please try again.")
       return
     }
     } catch (error) {
