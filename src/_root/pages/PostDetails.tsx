@@ -14,6 +14,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import PageNotFound from "./PageNotFound";
 import { Models } from "appwrite";
 import { deleteSavedPost } from "@/lib/appwrite/api";
+import { useEffect } from "react";
 
 export default function PostDetails() {
   const navigate = useNavigate();
@@ -33,6 +34,13 @@ export default function PostDetails() {
     (record: Models.Document) => record.post?.$id === id
   );
 
+  // Scroll to top when component is mounted
+  useEffect(() => {
+    console.log(id)
+    window.scrollTo(0, 0);
+  }, [id]);
+
+
   if (isGettingCurrentPost) {
     return (
       <div className="flex-center flex-1">
@@ -45,6 +53,7 @@ export default function PostDetails() {
     return <PageNotFound />;
   }
 
+  
   function handleDeletePost() {
     if (savedPostRecord) {
       deleteSavedPost(savedPostRecord.$id);
@@ -52,9 +61,9 @@ export default function PostDetails() {
     deletePost({ postId: id, imageId: post?.imageId });
     navigate(-1);
   }
-
+ 
   return (
-    <div className="post_details-container  ">
+    <div className="post_details-container">
       <div className="hidden w-full max-w-5xl md:flex">
         <Button
           onClick={() => navigate(-1)}

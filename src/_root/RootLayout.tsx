@@ -8,7 +8,7 @@ export default function RootLayout() {
     <div className="w-full md:flex">
       <Topbar />
       <LeftSidebar />
-      <section className="flex h-full flex-1">
+      <section className="flex h-full flex-1 custom-scrollbar">
         <Outlet />
       </section>
       <Bottombar />

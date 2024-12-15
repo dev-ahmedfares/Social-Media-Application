@@ -6,7 +6,7 @@
 
 @layer base {
   * {
-    @apply box-border list-none p-0 m-0 scroll-smooth;
+    @apply box-border list-none p-0 m-0 scroll-smooth custom-scrollbar;
   }
 
   body {
@@ -202,7 +202,7 @@
 
   /* Post Details */
   .post_details-container {
-    @apply flex flex-col flex-1 gap-10 overflow-y-scroll py-10 px-5 md:p-14 custom-scrollbar items-center;
+    @apply flex flex-col flex-1 gap-10  py-10 px-5 md:p-14 custom-scrollbar items-center;
   }
 
   .post_details-card {
